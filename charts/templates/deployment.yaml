@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loopr-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loopr-exporter
+  template:
+    metadata:
+      labels:
+        app: loopr-exporter
+    spec:
+      containers:
+        - name: exporter
+          image: {{ .Values.exporter.image }}
+          env:
+            - name: PORT
+              value: "{{ .Values.exporter.port }}"
+            - name: EXPORT_INTERVAL
+              value: "{{ .Values.exporter.exportInterval }}"
+          ports:
+            - containerPort: {{ .Values.exporter.port }}
