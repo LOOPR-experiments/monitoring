@@ -1,0 +1,4 @@
+apiVersion: v2
+name: loopr-monitoring
+description: Helm chart for Loopr monitoring stack
+version: 0.1.0
