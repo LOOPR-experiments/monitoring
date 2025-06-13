@@ -1,0 +1,23 @@
+{
+  "__inputs": [],
+  "__requires": [],
+  "title": "Loopr Audit Metrics",
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Requests Per Second",
+      "targets": [
+        {"expr": "rate(loopr_audit_requests_total[1m])", "legendFormat": "RPS"}
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "Error Rate",
+      "targets": [
+        {"expr": "rate(loopr_audit_errors_total[1m])", "legendFormat": "Errors/sec"}
+      ]
+    }
+  ],
+  "schemaVersion": 16,
+  "version": 0
+}
