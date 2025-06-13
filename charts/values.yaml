@@ -1,0 +1,7 @@
+prometheus:
+  image: prom/prometheus:latest
+grafana:
+  image: grafana/grafana:latest
+exporter:
+  port: 9100
+  exportInterval: 5000
